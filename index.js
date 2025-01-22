@@ -5,9 +5,24 @@ const welcomeMessage = () => {
 welcomeMessage();
 
 const displayWorkoutRoutine = () => {
-    const workoutInput = document.querySelector('#workoutInput').value;
+    const workoutInput = document.querySelector('#workoutInput').value.trim();
     const workoutList = document.querySelector('#workoutList');
     const newWorkout = document.createElement('li');
+    
+
+    const workout = document.querySelectorAll('#workoutList li');
+    
+    for (let i = 0; i < workout.length; i++) {
+        if (workoutInput === '') {
+            window.alert('Please enter your workout routine! 🤔');
+            return;
+        }
+        if (workout[i].textContent === workoutInput) {
+            window.alert('You already have that workout on your list! 🤔');
+            return;
+        }
+    }
+
     newWorkout.textContent = workoutInput;
     workoutList.appendChild(newWorkout);
 };
@@ -34,11 +49,11 @@ const addNewGoal = () => {
     // You might want to wrap the duplicate-checking logic in an 'if' statement.
     for (let i = 0; i < goals.length; i++) {
         if (goalInput === '') {
-            window.alert('Please enter your fitness goal! 🤔');
+            window.alert('Please enter fitness goal! 🤔');
             return;
         }
         if (goals[i].textContent === goalInput) {
-            window.alert('You already have that goal on your list! 🤔');
+            window.alert('Goal already exists! 🤔');
             return;
         }
     }

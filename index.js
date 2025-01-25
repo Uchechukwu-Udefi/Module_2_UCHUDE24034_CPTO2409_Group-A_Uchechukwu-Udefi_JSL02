@@ -25,6 +25,7 @@ const displayWorkoutRoutine = () => {
 
     newWorkout.textContent = workoutInput;
     workoutList.appendChild(newWorkout);
+    
 };
 
 document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine);
@@ -57,13 +58,28 @@ const addNewGoal = () => {
             return;
         }
     }
-    // ⚠️ Hint 4: Event listener
-    // The event listener that removes goals when clicked is not related to this issue.
-    // Focus on preventing duplicates for now.
-    
+
+
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
+
+
+    // ⚠️This section of the code is for practice purposes only not part of the challenge
+
+    // ⚠️ Hint 4: Event listener
+    // The event listener that removes goals when clicked is not related to this issue.
+    // Focus on preventing duplicates for now.
+
+    newGoal.addEventListener('click', () => {
+        const confirmDelete = confirm('Have you completed this goal? 🎉');
+        if (confirmDelete) {
+            goalList.removeChild(newGoal);
+        }
+    });
+
+    
+
 };
 
 // Add event listener to the goal submit button

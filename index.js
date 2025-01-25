@@ -46,13 +46,15 @@ const addNewGoal = () => {
     // If a duplicate is found, display an alert to the user and don't add the goal to the list.
     // If it's not a duplicate, proceed with adding it as a new goal.
 
-    // ⚠️ Hint 3: Code structure
-    // You might want to wrap the duplicate-checking logic in an 'if' statement.
     for (let i = 0; i < goals.length; i++) {
         if (goalInput === '') {
             alert('Please enter fitness goal! 🤔');
             return;
         }
+
+    // ⚠️ Hint 3: Code structure
+    // You might want to wrap the duplicate-checking logic in an 'if' statement.
+    
         if (goals[i].textContent === goalInput) {
             alert('Goal already exists! 🤔');
             return;
@@ -78,7 +80,9 @@ const addNewGoal = () => {
         }
     });
 
-    
+    // ⚠️ Hint 5: Reset input field
+    const goalInputField = document.querySelector('#goalInput');
+    goalInputField.value = '';
 
 };
 

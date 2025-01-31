@@ -17,7 +17,7 @@ const displayWorkoutRoutine = () => {
            alert('Please enter your workout routine! 🤔');
             return;
         }
-        if (workout[i].textContent === workoutInput) {
+        if (workout[i].textContent.toLowerCase() === workoutInput.toLowerCase()) {
             alert('Workout already exists! 🤔');
             return;
         }
@@ -55,7 +55,7 @@ const addNewGoal = () => {
     // ⚠️ Hint 3: Code structure
     // You might want to wrap the duplicate-checking logic in an 'if' statement.
     
-        if (goals[i].textContent === goalInput) {
+        if (goals[i].textContent.toLowerCase() === goalInput.toLowerCase()) {
             alert('Goal already exists! 🤔');
             return;
         }
